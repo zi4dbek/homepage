@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zi4dbek - 个人主页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f7fa;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .bio {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #555;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .time-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 0 auto 30px;
+            max-width: 300px;
+            box-shadow: var(--shadow);
+        }
+        
+        .time {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 30px 0 20px;
+            color: var(--dark-color);
+            font-size: 1.8rem;
+        }
+        
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .project {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .project h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .project p {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .projects {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .project {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>zi4dbek</h1>
+            <p class="bio">开发者 | 技术爱好者 | 开源贡献者</p>
+            <div class="quote" id="quote">加载名言中...</div>
+        </header>
+        
+        <div class="time-card">
+            <div class="time" id="time">00:00:00</div>
+            <div class="date" id="date">2023年1月1日 星期一</div>
+        </div>
+        
+        <h2 class="section-title">我的项目</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="https://blog.zi4dbek.top/img/favicon.png" alt="Hexo site" class="custom-icon">
+                <h3>zi4dbek的小站</h3>
+                <p>zi4dbek的小破站</p>
+                <a href="https://blog.zi4dbek.top" class="btn" target="_blank">点此访问</a>
+            </div>
+            
+            <div class="project">
+				<img src="https://gitproxy.zi4dbek.top/favicon.ico" alt="GitProxy" class="custom-icon">
+                <h3>GitHub下载代理</h3>
+                <p>加速GitHub文件下载服务</p>
+                <a href="https://gitproxy.zi4dbek.top" class="btn" target="_blank">点此使用</a>
+            </div>
+			
+            <div class="project">
+				<i class="fa-solid fa-circle-dollar-to-slot"></i>
+                <h3>捐助作者</h3>
+                <p>点击跳转捐助页面</p>
+                <a href="https://blog.zi4dbek.top/Sponsor/" class="btn" target="_blank">立即捐助</a>
+            </div>
+			
+        </div>
+        
+        <h2 class="section-title">联系我</h2>
+        <div class="social-links">
+            <a href="https://github.com/zi4dbek" class="social-link" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:me@zi4dbek.top" class="social-link" target="_blank" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://twitter.com/zi4dbek" class="social-link" target="_blank" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://t.me/zi4dbek" class="social-link" target="_blank" title="Telegram">
+                <i class="fab fa-telegram"></i>
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; <span id="year"></span> zi4dbek.top - All rights reserved
+    </footer>
+    
+    <script>
+        // 更新时间
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.getElementById('time');
+            const dateElement = document.getElementById('date');
+            
+            // 格式化时间
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+            
+            // 格式化日期
+            const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1;
+            const day = now.getDate();
+            const weekday = weekdays[now.getDay()];
+            dateElement.textContent = `${year}年${month}月${day}日 ${weekday}`;
+        }
+        
+        // 获取名言
+        async function fetchQuote() {
+            try {
+                const response = await fetch('https://v1.hitokoto.cn/');
+                const data = await response.json();
+                document.getElementById('quote').textContent = `${data.hitokoto} —— ${data.from}`;
+            } catch (error) {
+                console.error('获取名言失败:', error);
+                document.getElementById('quote').textContent = "生活不止眼前的苟且，还有诗和远方。 —— 高晓松";
+            }
+        }
+        
+        // 设置版权年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // 初始化
+        updateTime();
+        fetchQuote();
+        
+        // 每秒更新时间
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
